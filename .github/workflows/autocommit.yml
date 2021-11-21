@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@master
         
       - name: append random char
-        run: cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1 >> random.txt
+        run: echo FOO=foobar--$(date +%s) >> random.txt
       - name: auto commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
